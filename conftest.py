@@ -10,7 +10,7 @@ def get_driver():
     driver.quit()
 
 @pytest.fixture()
-def get_user():
+def get_user_1():
     user = {
         "Name": "Имя",
         "LastName": "Фамилия",
@@ -19,5 +19,18 @@ def get_user():
         "Phone": "77007700770",
         "day": "сутки",
         "comment": "no_comments"
+    }
+    return user
+
+@pytest.fixture()
+def get_user_2():
+    user = {
+        "Name": "Имядва",
+        "LastName": "Фамилиядва",
+        "Address": "Адресдва",
+        "Metro": "Лубянка",
+        "Phone": "77008800880",
+        "day": "двое суток",
+        "comment": "ноу комментс"
     }
     return user

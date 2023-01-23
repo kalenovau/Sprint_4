@@ -65,7 +65,11 @@ class OrderPage:
         self.driver.find_element(*order_page.rent_time).click()
         self.driver.find_element(By.XPATH, f"//div[@class = 'Dropdown-option' and text()='{ours}']").click()
 
-    @allure.step("Выбор цвета")
+    @allure.step("Выбор серого цвета")
+    def select_black_color(self):
+        self.driver.find_element(*order_page.checkbox_color_black).click()
+
+    @allure.step("Выбор серого цвета")
     def select_gray_color(self):
         self.driver.find_element(*order_page.checkbox_color_gray).click()
 
@@ -81,20 +85,37 @@ class OrderPage:
     def press_button_yes(self):
         self.driver.find_element(*order_page.yes_button).click()
 
-    # метод для заполнения полей для заказа
-    def fill_order_full(self, get_user):
+    # метод для заполнения полей для заказа пользователя 1
+    def fill_order_full_1(self, get_user_1):
         self.wait_element_visible(order_page.name_field)
-        self.input_name_field(get_user["Name"])
-        self.input_second_name(get_user["LastName"])
-        self.input_address(get_user["Address"])
-        self.input_phone_number(get_user["Phone"])
-        self.input_subway_name(get_user["Metro"])
-        self.select_subway(get_user["Metro"])
+        self.input_name_field(get_user_1["Name"])
+        self.input_second_name(get_user_1["LastName"])
+        self.input_address(get_user_1["Address"])
+        self.input_phone_number(get_user_1["Phone"])
+        self.input_subway_name(get_user_1["Metro"])
+        self.select_subway(get_user_1["Metro"])
         self.click_on_next_button()
         self.select_current_day()
-        self.select_rent_ours(get_user["day"])
+        self.select_rent_ours(get_user_1["day"])
         self.select_gray_color()
-        self.input_comment_for_courier(get_user["comment"])
+        self.input_comment_for_courier(get_user_1["comment"])
+        self.press_button_order()
+        self.press_button_yes()
+
+    # метод для заполнения полей для заказа пользователя 2
+    def fill_order_full_2(self, get_user_2):
+        self.wait_element_visible(order_page.name_field)
+        self.input_name_field(get_user_2["Name"])
+        self.input_second_name(get_user_2["LastName"])
+        self.input_address(get_user_2["Address"])
+        self.input_phone_number(get_user_2["Phone"])
+        self.input_subway_name(get_user_2["Metro"])
+        self.select_subway(get_user_2["Metro"])
+        self.click_on_next_button()
+        self.select_current_day()
+        self.select_rent_ours(get_user_2["day"])
+        self.select_black_color()
+        self.input_comment_for_courier(get_user_2["comment"])
         self.press_button_order()
         self.press_button_yes()
 

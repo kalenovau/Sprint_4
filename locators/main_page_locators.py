@@ -10,8 +10,3 @@ order_button_up = [By.XPATH, "//div[contains(@class,'Header')]/button[text()='З
 order_button_down = [By.XPATH, "//button[contains(@class,'Middle') and text()='Заказать']"]
 
 
-
-
-
-# нужно ли оно изображение самоката на главной странице
-image_on_main_page = [By.XPATH, "//img[@src='/assets/ya.svg']"]

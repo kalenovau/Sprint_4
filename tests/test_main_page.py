@@ -8,7 +8,6 @@ from pages.main_page import MainPage
 class TestAccordion:
     driver = None
 
-    # @classmethod
     @allure.title("Открытие браузера")
     def setup_class(cls):
         cls.driver = webdriver.Firefox()

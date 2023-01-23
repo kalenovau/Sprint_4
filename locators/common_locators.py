@@ -12,9 +12,7 @@ field_order_number = [By.XPATH, "//input[@type='text' and @placeholder='Введ
 # Кнопка Go
 button_go = [By.XPATH, "//button[text()='Go!']"]
 
-
-
-# попробовать сократить икспас Кнопка Статус заказа
+# Кнопка Статус заказа
 button_order_status = [By.XPATH, "//div[contains(@class,'Header')]/button[text()='Статус заказа']"]
 
 
